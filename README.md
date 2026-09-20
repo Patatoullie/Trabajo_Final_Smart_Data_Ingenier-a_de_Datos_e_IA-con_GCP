@@ -73,3 +73,8 @@ Los diagramas de arquitectura de la situación actual y la propuesta son los sig
 ![Arquitectura TO-BE](./img/diagrama-TO-BE.png)
 
 ---
+## 4. Autor
+
+**Nombre:** Mauricio Antonio Valderrama Ugarte
+
+**Correo electrónico:** lordpatas@gmail.com / mvalderramaugarte@hotmail.com
