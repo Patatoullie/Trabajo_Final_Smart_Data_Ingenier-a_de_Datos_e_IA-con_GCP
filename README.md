@@ -1,6 +1,7 @@
 # Proyecto Final – Migración de DigitalTransactionFrauds a Google Cloud Platform
 
 **Institución financiera (nombre ficticio):** ShareBank
+
 **Proceso analizado:** Envío de eventos de transacciones financieras hacia la plataforma de prevención de fraude MonitorPlus
 
 ---
@@ -19,7 +20,7 @@ Cada una de estas operaciones es enviada a un servidor **On-Premise** (físico) 
 
 Cada servicio recibe el JSON de la transacción, le asigna el código de evento correspondiente y lo envía directamente al servicio externo **MonitorPlus**, una plataforma de decisión (criterio experto + Machine Learning) contratada a un proveedor externo para la prevención de lavado de activos y financiamiento del terrorismo. MonitorPlus es administrada íntegramente por el proveedor; ShareBank no tiene control sobre su disponibilidad.
 
-A futuro, se espera seguir integrando nuevos servicios/tipos de transacción a DigitalTransactionFrauds, cada uno con su propio código de evento.
+A futuro, se espera seguir integrando nuevos servicios y/o tipos de transacción a DigitalTransactionFrauds, cada uno con su propio código de evento.
 
 ### Problemas identificados
 
@@ -53,7 +54,7 @@ La propuesta consiste en migrar la aplicación **DigitalTransactionFrauds** a **
 8. Cada 4 horas desde la medianoche, **Cloud Scheduler** invoca una **Cloud Function**.
 9. La Cloud Function lee la cola de error y republica los mensajes en el tópico activo, reiniciando el ciclo de reintentos hacia MonitorPlus (paso 4).
 
-### Servicios GCP utilizados (cumple el mínimo de 3)
+### Servicios GCP utilizados
 
 1. Google Kubernetes Engine (GKE)
 2. Pub/Sub (tópico activo + cola de error)
